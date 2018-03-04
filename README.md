@@ -1,6 +1,32 @@
 # MIDTERM: Launching an ICO
 Welcome to the Blockchain for Developers DeCal's midterm assignment. You'll be designing your own ICO.
 
+## Midterm Team Assignment
+
+###### Project Partner 1
+
+Name:
+
+SID:
+
+Email:
+
+###### Project Partner 2
+
+Name:
+
+SID:
+
+Email:
+
+###### Project Partner 3 (if any)
+
+Name:
+
+SID:
+
+Email:
+
 ## Midterm Instructions
 
 Your task is to complete both `Token.sol` and `Crowdsale.sol` such that they each function as described below. `Queue.sol` is also a necessary data structure contract. Notice that `Token.sol` inherits from `contracts/interfaces/ERC20Interface.sol`.
@@ -85,14 +111,14 @@ You have a lot freedom to carry out this assignment as you please. You will be g
 * [MetaMask](https://metamask.io/) or [frontend integration](https://github.com/ethereum/web3.js/)
 
 ## Testing 
-You can verify that your smart contract is implemented correctly with `truffle test`. Be sure to have a testrpc server running in a separate terminal.
+You can verify that your smart contract is implemented correctly with `truffle test`. Be sure to have a ganache server running in a separate terminal.
 
-Refresher: in an empty terminal, run `testrpc` to initialize a default testrpc server. If you get errors, read the [_testrpc_ documentation](https://github.com/ethereumjs/testrpc).
+Refresher: in an empty terminal, run `ganache-cli` to initialize a default ganache server. If you get errors, read the [_ganache_ documentation](https://github.com/trufflesuite/ganache-cli).
 
 ### Truffle Console
 If you're having trouble passing the tests and would like to play around with the contracts manually:
 1. Run `truffle migrate`
-2. Run `truffle console`, This will open up a Node JavaScript console that is connected to your testrpc server
+2. Run `truffle console`, This will open up a Node JavaScript console that is connected to your ganache server
 
 ## Submission Instructions
 Please fork this repo and push your code up to your fork. Please fill out this Google Form to let us know where you've got your answers: https://goo.gl/forms/<xyz>.
