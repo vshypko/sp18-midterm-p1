@@ -1,0 +1,99 @@
+{
+  "contractName": "Crowdsale",
+  "abi": [],
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a72305820f29ac64d2a67904f1f104a6c72e7d6becdd6fa709726696d137acb2c075da1020029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a72305820f29ac64d2a67904f1f104a6c72e7d6becdd6fa709726696d137acb2c075da1020029",
+  "sourceMap": "213:41:0:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "213:41:0:-;;;;;",
+  "source": "pragma solidity ^0.4.15;\n\nimport './Queue.sol';\nimport './Token.sol';\n\n/**\n * @title Crowdsale\n * @dev Contract that deploys `Token.sol`\n * Is timelocked, manages buyer queue, updates balances on `Token.sol`\n */\n\ncontract Crowdsale {\n\t// YOUR CODE HERE\n}\n",
+  "sourcePath": "/Users/vitali/IdeaProjects/blockchain-dev/sp18-midterm-p1/contracts/Crowdsale.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/Users/vitali/IdeaProjects/blockchain-dev/sp18-midterm-p1/contracts/Crowdsale.sol",
+      "exportedSymbols": {
+        "Crowdsale": [
+          4
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".15"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 106,
+          "absolutePath": "/Users/vitali/IdeaProjects/blockchain-dev/sp18-midterm-p1/contracts/Queue.sol",
+          "file": "./Queue.sol",
+          "scope": 5,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2,
+        "name": "ImportDirective",
+        "src": "26:21:0"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 112,
+          "absolutePath": "/Users/vitali/IdeaProjects/blockchain-dev/sp18-midterm-p1/contracts/Token.sol",
+          "file": "./Token.sol",
+          "scope": 5,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 3,
+        "name": "ImportDirective",
+        "src": "48:21:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": "@title Crowdsale\n@dev Contract that deploys `Token.sol`\nIs timelocked, manages buyer queue, updates balances on `Token.sol`",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            4
+          ],
+          "name": "Crowdsale",
+          "nodes": [
+            null
+          ],
+          "scope": 5
+        },
+        "id": 4,
+        "name": "ContractDefinition",
+        "src": "213:41:0"
+      }
+    ],
+    "id": 5,
+    "name": "SourceUnit",
+    "src": "0:255:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-03-03T09:49:11.907Z"
+}
