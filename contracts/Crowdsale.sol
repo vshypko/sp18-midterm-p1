@@ -20,8 +20,8 @@ contract Crowdsale {
     uint256 initialAmount;
     uint256 weiWorth;
 
-    Token token;
-    Queue queue;
+    Token public token;
+    Queue public queue;
 
     event TokenPurchase(address indexed _address, uint256 _value);
     event TokenRefund(address indexed _address, uint256 _value);

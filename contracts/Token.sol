@@ -28,6 +28,10 @@ contract Token is ERC20Interface {
         balances[msg.sender] = 1000000;
     }
 
+    function getTotalSupply() returns(uint256) {
+        return totalSupply;
+    }
+
     /// @param _owner The address from which the balance will be retrieved
     /// @return The balance
     function balanceOf(address _owner) constant returns (uint256) {
@@ -39,15 +43,15 @@ contract Token is ERC20Interface {
     /// @param _value The amount of token to be transferred
     /// @return Whether the transfer was successful or not
     function transfer(address _to, uint256 _value) returns (bool) {
-        require(_value > 0);
-
-        if (balances[msg.sender] >= _value) {
-            balances[msg.sender].sub(_value);
-            balances[_to].add(_value);
-            Transfer(msg.sender, _to, _value);
-            return true;
-        } else {
-            return false;
+        if (_value > 0) {
+            if (balances[msg.sender] >= _value) {
+                balances[msg.sender].sub(_value);
+                balances[_to].add(_value);
+                Transfer(msg.sender, _to, _value);
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
@@ -57,16 +61,16 @@ contract Token is ERC20Interface {
     /// @param _value The amount of token to be transferred
     /// @return Whether the transfer was successful or not
     function transferFrom(address _from, address _to, uint256 _value) returns (bool) {
-        require(_value > 0);
-
-        if ((balances[_from] >= _value)
+        if (_value > 0) {
+            if ((balances[_from] >= _value)
             && (allowed[_from][msg.sender] >= _value)) {
-            balances[_from].sub(_value);
-            balances[_to].add(_value);
-            Transfer(msg.sender, _to, _value);
-            return true;
-        } else {
-            return false;
+                balances[_from].sub(_value);
+                balances[_to].add(_value);
+                Transfer(msg.sender, _to, _value);
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
@@ -92,13 +96,13 @@ contract Token is ERC20Interface {
     }
 
     function burnTokens (uint256 _value) public returns (bool) {
-        require(balances[msg.sender] >= _value);
-
-        if (transfer(address(0), _value)) {
-            totalSupply.sub(_value);
-            return true;
-        } else {
-            return false;
+        if (balances[msg.sender] >= _value) {
+            if (transfer(address(0), _value)) {
+                totalSupply.sub(_value);
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 

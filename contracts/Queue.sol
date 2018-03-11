@@ -58,30 +58,30 @@ contract Queue {
     /* Removes the first person in line; either when their time is up or when
     * they are done with their purchase */
     function dequeue() {
-        require(numOfPeople > 0);
+        if (numOfPeople > 0) {
+        	delete addressPosition[queue[0]];
+	        delete queue[0];
+	        numOfPeople--;
 
-        delete addressPosition[queue[0]];
-        delete queue[0];
-        numOfPeople--;
+	        for (uint i = 0; i < numOfPeople; i++) {
+	            queue[i] = queue[i+1];
+	            addressPosition[queue[i]]--;
+	        }
 
-        for (uint i = 0; i < numOfPeople; i++) {
-            queue[i] = queue[i+1];
-            addressPosition[queue[i]]--;
+	        frontTimer = now;
         }
-
-        frontTimer = now;
     }
 
     /* Places `addr` in the first empty position in the queue */
     function enqueue(address addr) {
-        require(numOfPeople < size);
+    	if (numOfPeople < size) {
+    		queue[numOfPeople] = addr;
+	        addressPosition[addr] = numOfPeople;
+	        numOfPeople++;
 
-        queue[numOfPeople] = addr;
-        addressPosition[addr] = numOfPeople;
-        numOfPeople++;
-
-        if (addressPosition[addr] == 0) {
-            frontTimer = now;
-        }
+	        if (addressPosition[addr] == 0) {
+	            frontTimer = now;
+	        }
+    	}
     }
 }
